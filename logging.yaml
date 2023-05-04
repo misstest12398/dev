@@ -1,0 +1,26 @@
+version: 1
+disable_existing_loggers: false
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: simple
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: simple
+    filename: api_test.log
+    encoding: utf-8
+    mode: a
+loggers:
+  api_test:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+root:
+  level: INFO
+  handlers: [console, file]

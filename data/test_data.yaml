@@ -1,0 +1,14 @@
+- api_path: /HTTP/login
+  api_method: post
+  expected_status_code: 200
+  expected_response:
+    id: 1
+    name: John Doe
+- api_path: /HTTP/login
+  api_method: post
+  api_data:
+    username: Will
+    password: 123456
+  expected_status_code: 201
+  expected_response:
+    name: Jane Doe
